@@ -4,7 +4,7 @@
 Small App to retrieve facts about cats from public API and display on user request.
 
 
-###Work in Progress:
+#### Work in Progress:
 - Download PDF with facts
 - Show list of PDFs requested
 - Integrate quantity form per user request
@@ -12,7 +12,7 @@ Small App to retrieve facts about cats from public API and display on user reque
 - Create deployment environment and documentation
 
 
-###App Screenshots:
+#### App Screenshots:
 
 ![Screenshot01](public/img/Screenshot01.png)
 ![Screenshot02](public/img/Screenshot02.png)
