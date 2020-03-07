@@ -23,9 +23,13 @@ class PagesController extends Controller
     {
         $title = 'Cat Facts';
 
+        // Default Value
+        $qty = 5;
+        $uri = 'https://catfact.ninja/facts?limit=' . $qty . '&max_length=140';
+
         // Api Call
         $client = new Client();
-        $response = $client->request('GET', 'https://catfact.ninja/facts?limit=5&max_length=140');
+        $response = $client->request('GET', $uri);
         $statusCode = $response->getStatusCode();
         $body = $response->getBody()->getContents();
 
