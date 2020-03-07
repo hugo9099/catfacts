@@ -13,6 +13,11 @@ class PagesController extends Controller
         return view('pages.index')->with('title', $title);
     }
 
+    public function getfacts() {
+        $title = 'Cat Facts';
+        return view('pages.getfacts')->with('title', $title);
+    }
+
     public function about() {
         $title = 'About Us';
         return view('pages.about')->with('title', $title);
