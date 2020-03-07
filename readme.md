@@ -3,6 +3,7 @@
 
 Small App to retrieve facts about cats from public API and display on user request.
 
+### Time mark: 6 hrs
 
 #### Work in Progress:
 - Download PDF with facts
