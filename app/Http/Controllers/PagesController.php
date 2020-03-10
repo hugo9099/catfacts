@@ -19,12 +19,21 @@ class PagesController extends Controller
         return view('pages.getfacts')->with('title', $title);
     }*/
 
-    public function getfacts()
+    public function getfacts(Request $request)
     {
         $title = 'Cat Facts';
 
-        // Default Value
-        $qty = 5;
+        // Get and validate quantity from user
+        $quantity_requested = $request->input('quantity');
+        $quantity_requested = (int)$quantity_requested;
+
+        if (is_int($quantity_requested) && $quantity_requested > 0 && $quantity_requested < 101) {
+            $qty = $quantity_requested;
+        } else {
+            // Default Value
+            $qty = 5;
+        }
+
         $uri = 'https://catfact.ninja/facts?limit=' . $qty . '&max_length=140';
 
         // Api Call

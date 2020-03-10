@@ -5,13 +5,13 @@
 
     <p>How many facts do you want?</p>
 
-    <form action="/getfacts" class="form-inline">
-        <div class="form-group mx-sm-3 mb-2">
-            <label for="quantity" class="sr-only">Quantity:</label>
-            <input type="number" class="form-control" id="quantity" name="qty" placeholder="Enter quantity">
-        </div>
-        <button type="submit" class="btn btn-primary mb-2">Get Facts</button>
-    </form>
+    {!! Form::open(['action' => 'PagesController@getfacts', 'method' => 'POST', 'class' => 'form-inline']) !!}
+    <div class="form-group mb-2">
+        {{Form::label('quantity', 'Quantity:')}}
+        {{Form::number('quantity', '', ['class' => 'form-control', 'placeholder' => 'Enter Quantity'])}}
+    </div>
+    {{Form::submit('Submit', ['class'=>'btn btn-primary mb-2'])}}
+    {!! Form::close() !!}
 
     <hr>
 
