@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use PDF;
 
 class PagesController extends Controller
 {
@@ -57,4 +58,14 @@ class PagesController extends Controller
         $title = 'About Us';
         return view('pages.about')->with('title', $title);
     }
+
+    function pdf(Request $request)
+    {
+        $text = $request->input('data');
+
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($text);
+        return $pdf->stream();
+    }
+
 }

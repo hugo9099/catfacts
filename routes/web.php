@@ -17,3 +17,5 @@ Route::get('/getfacts', 'PagesController@getfacts');
 Route::post('/getfacts', 'PagesController@getfacts');
 
 Route::get('/about', 'PagesController@about');
+
+Route::post('/pdf', 'PagesController@pdf');
